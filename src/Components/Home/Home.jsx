@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Home = () => {
     return (
         <div className="container mx-auto">
-            <div className="navbar bg-red-300 rounded-b-lg">
+            <div className="navbar bg-indigo-200 rounded-b-lg">
                 <div className="flex-1">
                     <a className="btn btn-ghost normal-case text-2xl font-bold">
                         Privet Route
@@ -23,6 +23,7 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
+            <Outlet />
         </div>
     );
 };

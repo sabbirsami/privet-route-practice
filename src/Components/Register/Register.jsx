@@ -1,11 +1,22 @@
 import { NavLink } from "react-router-dom";
 
-const LogIn = () => {
+const Register = () => {
     return (
         <div className="hero min-h-[90vh] bg-base-200 mt-5 rounded-lg">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="card w-full  shadow-2xl bg-base-100">
                     <form className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="name"
+                                className="input input-bordered w-96"
+                                required
+                            />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -41,9 +52,9 @@ const LogIn = () => {
                         </div>
                     </form>
                     <p className="text-sm text-center px-3 pb-5">
-                        Do not have any account?{" "}
-                        <NavLink className={"btn btn-link"} to={"/register"}>
-                            Register
+                        Have any account?{" "}
+                        <NavLink className={"btn btn-link"} to={"/login"}>
+                            Login
                         </NavLink>
                     </p>
                 </div>
@@ -52,4 +63,4 @@ const LogIn = () => {
     );
 };
 
-export default LogIn;
+export default Register;
