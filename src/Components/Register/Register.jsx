@@ -1,11 +1,20 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+
     const handleSubmit = (e) => {
-        const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, email, password);
+        createUser(email, password)
+            .then((result) => {
+                console.log(result.user);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     };
     return (
         <div className="hero min-h-[90vh] bg-base-200 mt-5 rounded-lg">
@@ -57,7 +66,9 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-3">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">
+                                Register
+                            </button>
                         </div>
                     </form>
                     <p className="text-sm text-center px-3 pb-5">

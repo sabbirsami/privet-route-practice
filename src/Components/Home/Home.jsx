@@ -1,12 +1,17 @@
+import { useContext } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Home = () => {
+    const { name } = useContext(AuthContext);
+    console.log(name);
+
     return (
         <div className="container mx-auto">
             <div className="navbar bg-indigo-200 rounded-b-lg">
                 <div className="flex-1">
                     <a className="btn btn-ghost normal-case text-2xl font-bold">
-                        Privet Route
+                        {name}
                     </a>
                 </div>
                 <div className="flex-none">
